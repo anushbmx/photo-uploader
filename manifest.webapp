@@ -1,0 +1,27 @@
+{
+    "version": "0.0.1",
+    "name": "Photo Uploader",
+    "description": "Shoot photos and upload them",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/img/icons/icon16x16.png",
+        "48": "/img/icons/icon48x48.png",
+        "60": "/img/icons/icon60x60.png",
+        "128": "/img/icons/icon128x128.png"
+    },
+    "developer": {
+        "name": "Mozilla",
+        "url": "http://mozilla.org"
+    },
+    "type": "privileged",
+    "permissions": {
+        "device-storage:sdcard": {
+            "access": "readwrite",
+            "description": "Store files in and read from the sdcard"
+        }
+    },
+    "installs_allowed_from": [
+        "*"
+    ],
+    "default_locale": "en"
+}
