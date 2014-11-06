@@ -2,7 +2,7 @@
 
     var takephoto = document.getElementById("takephoto"),
         photogrid = document.getElementById("photogrid"),
-        photos = [];
+        photos = {};
 
     // Load photos from localforage
     localforage.getItem("photos").then(function (result) {
@@ -15,9 +15,9 @@
 
     var printphotos = function () {
         console.log("printing photos", photos);
-        photos.forEach(function (photo) {
-            appendphoto(photo);
-        });
+        for (var key in photos) {
+            appendphoto(photos[key]);
+        }
     };
 
     var appendphoto = function (photo) {
@@ -34,16 +34,15 @@
         photowrapper.setAttribute("data-lastModifiedDate", photo.blob.lastModifiedDate);
         photowrapper.innerHTML = "<img src='" + URL.createObjectURL(photo.blob) + "'>";
         photowrapper.addEventListener("click", function () {
-            alert("going to card view of " + this.getAttribute("data-name"));
-            window.location.replace("card.html#photo=" + this.getAttribute("data-name"));
+            window.location.replace("card.html#" + this.getAttribute("data-name"));
         }, false);
         photogrid.appendChild(photowrapper);
     };
 
     var savephoto = function (photo) {
-        photos.push(photo);
+        photos[photo.blob.name] = photo;
         localforage.setItem("photos", photos, function () {
-            console.log("setting photos storage", photos, photos.length);
+            console.log("setting photos storage", photos);
             alert("Photo saved.");
             appendphoto(photo);
         });

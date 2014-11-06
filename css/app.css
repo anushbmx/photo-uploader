@@ -68,6 +68,10 @@ a:focus {
   height: 5rem;
 }
 
+.grid.row .column.full-width {
+  flex: 0 1 100%;
+}
+
 /**
  * Buttons
  */
@@ -173,4 +177,14 @@ section {
 .photo-item img {
   width: 5rem;
   height: 5rem;
+}
+
+/**
+ * Card
+ */
+#cardimg {
+  width: 94%;
+  height: 20rem;
+  padding: calc(3% - 2px);
+  border: 1px solid #ccc;
 }
