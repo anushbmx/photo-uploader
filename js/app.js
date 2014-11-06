@@ -33,6 +33,10 @@
         photowrapper.setAttribute("data-type", photo.blob.type);
         photowrapper.setAttribute("data-lastModifiedDate", photo.blob.lastModifiedDate);
         photowrapper.innerHTML = "<img src='" + URL.createObjectURL(photo.blob) + "'>";
+        photowrapper.addEventListener("click", function () {
+            alert("going to card view of " + this.getAttribute("data-name"));
+            window.location.replace("card.html#photo=" + this.getAttribute("data-name"));
+        }, false);
         photogrid.appendChild(photowrapper);
     };
 
