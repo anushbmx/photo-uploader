@@ -16,11 +16,11 @@
     "type": "privileged",
     "permissions": {
         "device-storage:sdcard": {
-            "access": "readonly",
+            "access": "readwrite",
             "description": "Store files in and read from the sdcard"
         },
         "device-storage:pictures": {
-            "access": "readonly",
+            "access": "readwrite",
             "description": "Store files in and read from the picture storage"
         }
     },
