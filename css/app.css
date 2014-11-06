@@ -79,13 +79,14 @@ a:focus {
   background: #ebebeb;
   text-decoration: none;
   color: #333333;
-  font-size: 0.8rem;
-  padding: 10px;
+  font-size: 1rem;
+  padding: 0px 10px;
   outline: 0;
   border-radius: 0;
   border: 1px solid #bfbfbf;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
   display: inline-block;
+  height: 3rem;
   cursor: pointer;
 }
 
