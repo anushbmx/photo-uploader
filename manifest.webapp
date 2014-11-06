@@ -16,8 +16,12 @@
     "type": "privileged",
     "permissions": {
         "device-storage:sdcard": {
-            "access": "readwrite",
+            "access": "readonly",
             "description": "Store files in and read from the sdcard"
+        },
+        "device-storage:pictures": {
+            "access": "readonly",
+            "description": "Store files in and read from the picture storage"
         }
     },
     "installs_allowed_from": [
