@@ -6,6 +6,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #fff;
   color: #333;
   font-family: "Fira Sans", "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -55,7 +56,16 @@ a:focus {
   font-weight: normal;
   font-size: 1rem;
   padding: 0 5px;
+}
 
+.grid.row {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grid.row .column {
+  flex: 0 1 33.3333%;
+  height: 5rem;
 }
 
 /**
@@ -131,4 +141,9 @@ section {
 
 .lead .button {
   font-size: 1.25rem;
+}
+
+.photo-item img {
+  width: 5rem;
+  height: 5rem;
 }
