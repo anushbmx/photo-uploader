@@ -6,12 +6,17 @@
     <meta charset="utf-8">
     <title>Photo uploader</title>
     <meta name="description" content="Search and pick files from device">
+
+    <!-- Set the scale of the web page to 1, and prevent user to zoom in. This makes a HTML5 app behave more
+    like a native app -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="css/app.css">
   </head>
 
   <body>
+
+    <!-- Use semantic HTML elements to create the header -->
     <header class="blue">
       <a href="index.html" class="button button-blue button-left button-back">&lt;</a>
       <h1 class="title">Photo uploader</h1>
@@ -20,11 +25,16 @@
     <section>
       <div class="lead">
         <div class="card">
+
+          <!-- Create an img element with blank src for showing preview of the current image.. We will fill in the src
+          with the data from URL.createObjectURL -->
           <img id="cardimg" src="" alt="card image">
         </div>
       </div>
       <div class="row grid">
         <div class="column">
+
+          <!-- This button will trigger delete of the photo -->
           <button id="deletebutton" class="button">Delete</button>
         </div>
       </div>

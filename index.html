@@ -6,18 +6,28 @@
     <meta charset="utf-8">
     <title>Photo uploader</title>
     <meta name="description" content="Search and pick files from device">
+
+    <!-- Set the scale of the web page to 1, and prevent user to zoom in. This makes a HTML5 app behave more
+    like a native app -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="css/app.css">
   </head>
 
   <body>
+
+    <!-- Use semantic HTML elements to create the header -->
     <header class="blue">
       <h1 class="title">Photo uploader</h1>
     </header>
 
+    <!-- Mark content portions as section -->
     <section>
+
       <div class="lead">
+
+        <!-- The button to take a photo. We have a click handler for this button which triggers a
+        "pick" web activity -->
         <button id="takephoto" class="button button-large">Take new photo</button>
       </div>
 
@@ -29,6 +39,7 @@
 
       <div id="photogrid" class="row grid list">
         <div class="column full-width">
+          <!-- We will dynamically fill in content here based on the photos that we have saved -->
           <p>No photos yet.</p>
         </div>
       </div>
