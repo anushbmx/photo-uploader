@@ -39,7 +39,6 @@
      * Delete a photo from the Device Storage and from localforage.
      */
     var deletephoto = function () {
-
         // Confirm if user wants to delete
         if (confirm("Delete?")) {
 
@@ -67,12 +66,11 @@
         }
     };
 
-    // Button bindings
-    document.getElementById("deletebutton").addEventListener("click", deletephoto, false);
-    document.getElementById("sharebutton").addEventListener("click", sharephoto, false);
-    document.getElementById("uploadbutton").addEventListener("click", uploadphoto, false);
-
+    /**
+     * Upload a photo to Imgur.
+     */
     var uploadphoto = function() {
+      // Get file object
       var file = photo.blob;
 
       // Create object for form data
@@ -94,8 +92,9 @@
       xhr.send(fd);
     };
 
-    //var onUploaded
-    
+    /**
+     * Share a photo.
+     */
     var sharephoto = function() {
       var blob = photos[id].blob;
       new MozActivity({
@@ -108,5 +107,9 @@
       });
     }
 
+    // Button bindings
+    document.querySelector("#deletebutton").addEventListener("click", deletephoto, false);
+    document.querySelector("#sharebutton").addEventListener("click", sharephoto, false);
+    document.querySelector("#uploadbutton").addEventListener("click", uploadphoto, false);
 
 })();
