@@ -69,5 +69,44 @@
 
     // Button bindings
     document.getElementById("deletebutton").addEventListener("click", deletephoto, false);
+    document.getElementById("sharebutton").addEventListener("click", sharephoto, false);
+    document.getElementById("uploadbutton").addEventListener("click", uploadphoto, false);
+
+    var uploadphoto = function() {
+      var file = photo.blob;
+
+      // Create object for form data
+      var fd = new FormData();
+
+      // Add file to form data
+      fd.append("image", file);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://api.imgur.com/3/upload.json");
+      xhr.onload = function() {
+        var data = JSON.parse(xhr.responseText).data;
+        var imgurURL = data.link;
+        photos[photoid].imgurURL = imgurURL;
+        localforage.setItem("photos", photos, function () {});
+      }
+      var clientId = 'Client-ID 1ca3a1cf63cc8bc';
+      xhr.setRequestHeader('Authorization', clientId);
+      xhr.send(fd);
+    };
+
+    //var onUploaded
+    
+    var sharephoto = function() {
+      var blob = photos[id].blob;
+      new MozActivity({
+        name: "share",
+        data: {
+          type: photos[id].type,
+          number: 1,
+          blobs: [blob]
+        }
+      });
+    }
+
 
 })();
