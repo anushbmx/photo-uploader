@@ -72,6 +72,9 @@ a:focus {
   flex: 0 1 100%;
 }
 
+.align-center{
+	margin : 0 auto;
+}
 /**
  * Buttons
  */
@@ -130,7 +133,16 @@ header .button.button-right {
 .button-back {
 
 }
-
+button.warning, .button.warning {
+    background-color: #f08a24;
+    border-color: #cf6e0e;
+    color: white; 
+}
+button.info, .button.info {
+    background-color: #a0d3e8;
+    border-color: #61b6d9;
+    color: #333333; 
+}
 /**
  * Header
  */
